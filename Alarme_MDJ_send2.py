@@ -28,7 +28,7 @@ camera.resolution = (640, 480)
 
 #server.login("Your Email ID", "Email ID Password")
 
-#2server.login("alarmemdj.v2@gmail.com","miuh gzwk alpz pivi") 
+#2server.login("@gmail.com","") 
 ####################################################################
 #tirar foto  #######################################################
 
@@ -48,8 +48,8 @@ cv2.imshow('Image loaded with OpenCV', img)
 #mandando gmail
 
 def send_an_email():  
-    toaddr = 'alarmemdj.v2@gmail.com'      # To id 
-    me = 'alarmemdj.v2@gmail.com'          # your id
+    toaddr = '@gmail.com'      # To id 
+    me = '@gmail.com'          # your id
     subject = "Boa tarde"              # Subject
   
     msg = MIMEMultipart()  
@@ -57,7 +57,7 @@ def send_an_email():
     msg['From'] = me  
     msg['To'] = toaddr  
     msg.preamble = "test "   
-    #msg.attach(MIMEText(text))  
+    
   
     part = MIMEBase('application', "octet-stream")  
     part.set_payload(open("test_MDJ.jpg", "rb").read())  
@@ -70,7 +70,7 @@ def send_an_email():
        s.ehlo()  
        s.starttls()  
        s.ehlo()  
-       s.login(user = 'alarmemdj.v2@gmail.com', password = 'miuh gzwk alpz pivi')  # User id & password
+       s.login(user = '@gmail.com', password = '')  # User id & password
        #s.send_message(msg)  
        s.sendmail(me, toaddr, msg.as_string())  
        s.quit()  
